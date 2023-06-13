@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WorldO'Gaming</title>
+  <link rel="stylesheets" href="style.css">
+</head>
+<body>
+  <div id="authScreen">
+    <h2>Authentication</h2>
+    <button onclick="authenticateWithGoogle()">Sign in with Google</button>
+  </div>
+
+  <div id="watchAdsScreen" style="display: none;">
+    <label for="gn">GameName</label>
+    <input type="text" id="gn" name="gn">
+    <video id="adIframe"></video>
+    <h2>Watch Ads</h2>
+    <button onclick="watchAds()">Watch Ads</button>
+    <a href="#libraryScreen">library</a>
+    <a href="#uploadFormsScreen">upload</a>
+    <a href="#watchAdsScreen">watchAds</a>
+  </div>
+
+  <div id="uploadFormsScreen" style="display: none;">
+    <h2>Upload Forms</h2>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="cost">Cost:</label>
+      <input type="number" id="cost" name="cost" required>
+
+      <label for="uploader">Uploader Username (email):</label>
+      <input type="text" id="uploader" name="uploader" required>
+
+      <label for="file">Select a file:</label>
+      <input type="file" id="file" name="file" required>
+
+      <button type="button" onclick="uploadGame()">Upload</button>
+      <button onclick="updateGame()">Update Game</button>
+      <button onclick="removeGame()">Remove Game</button>
+      
+
+    </form>
+    <h2>Ad Upload</h2>
+    <form>
+      <label for="adName">Name:</label>
+      <input type="text" id="adName" name="adName" required>
+
+      <label for="adDuration">Duration (in seconds):</label>
+      <input type="number" id="adDuration" name="adDuration" required>
+
+      <label for="adURL">Ad URL:</label>
+      <input type="url" id="adURL" name="adURL" required>
+
+      <label for="adUploader">Uploader Username (email):</label>
+      <input type="text" id="adUploader" name="adUploader" required>
+
+      <button type="button" onclick="uploadAd()">Upload Ad</button>
+      <button onclick="removeAd()">Remove Ad</button>
+      
+    </form>
+    <a href="#libraryScreen">library</a>
+    <a href="#uploadFormsScreen">upload</a>
+    <a href="#watchAdsScreen">watchAds</a>
+  </div>
+
+
+  <div id="libraryScreen" style="display: none;">
+    <h2>Library</h2>
+    <button onclick="showLibrary()">Show Library</button>
+    <div id="gameList"></div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+  
+  <script src="main.js">
+    // Firebase configuration
+    
+  
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  
+  </script>
+  <a href="#libraryScreen">library</a>
+  <a href="#uploadFormsScreen">upload</a>
+  <a href="#watchAdsScreen">watchAds</a>
+</body>
+</html>
